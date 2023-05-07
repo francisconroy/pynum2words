@@ -10,9 +10,7 @@ prefix_lookup = {
         9: "billion",
         6: "million",
         3: "thousand",
-        2: "hundred",
-        1: "ten",
-        0: "one"
+        2: "hundred"
     },
     "DE": {
         30: "nonillion",
@@ -25,8 +23,6 @@ prefix_lookup = {
         9: "Millarde",
         6: "Million",
         3: "Tausend",
-        2: "Hundert",
-        1: "Zehn",
-        0: "one"
+        2: "Hundert"
     }
 }
