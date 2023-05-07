@@ -9,6 +9,8 @@ class Tests(TestCase):
         self.assertEqual((True, 23), list_to_integer([0, 2, 3]))
         self.assertEqual((True, 231), list_to_integer([2, 3, 1]))
         self.assertEqual((True, -231), list_to_integer([-2, 3, 1]))
+        self.assertEqual((True, 0), list_to_integer([0, 0, 0]))
+        self.assertEqual((True, 0), list_to_integer([0]))
 
     def test_with_empty_list(self):
         self.assertEqual(False, list_to_integer([])[0])

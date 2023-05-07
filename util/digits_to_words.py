@@ -9,13 +9,20 @@ def three_digits_to_words(three_digit_list, language="EN"):
     :param three_digit_list:
     :return:
     """
-    status, hundreds = list_to_integer(three_digit_list[0])
-    HUNDREDS_POWER = 2
-    if not status:
-        raise ValueError(f"Could not convert hundreds value to integer {three_digit_list}")
+    if len(three_digit_list) > 2:
+        status, hundreds = list_to_integer(three_digit_list[0])
+        HUNDREDS_POWER = 2
+        if not status:
+            raise ValueError(f"Could not convert hundreds value to integer {three_digit_list}")
+        return_string = f"{words[language][hundreds]} {prefix_lookup[language][HUNDREDS_POWER]}"
+        last_digits_in_words = two_digits_to_words(three_digit_list[1:])
+        if last_digits_in_words:
+            return return_string + " and " + last_digits_in_words
+        else:
+            return return_string
 
-    return_string = f"{words[language][hundreds]} {prefix_lookup[language][HUNDREDS_POWER]}"
-    return return_string + " and " + two_digits_to_words(three_digit_list[1:])
+    else:
+        return two_digits_to_words(three_digit_list)
 
 
 def two_digits_to_words(two_digit_list, language="EN"):
