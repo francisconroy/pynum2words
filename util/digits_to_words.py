@@ -37,6 +37,9 @@ def two_digits_to_words(two_digit_list, language="EN"):
     if not retval:
         raise ValueError(f"Digit list given was not an integer {two_digit_list}")
 
+    if value == 0:
+        return ""
+
     if language not in words:
         raise ValueError(f"Language selected not supported {language}")
 
