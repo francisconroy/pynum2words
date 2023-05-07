@@ -12,6 +12,10 @@ class Tests(TestCase):
         self.assertEqual("eighteen", two_digits_to_words([1, 8]))
         self.assertEqual("nineteen", two_digits_to_words([1, 9]))
         self.assertEqual("thirty one", two_digits_to_words([3, 1]))
+        with self.assertRaises(ValueError):
+            two_digits_to_words(["c"])
+        with self.assertRaises(ValueError):
+            two_digits_to_words([1, 2, 3], "XX")
 
     def test_three_digits_to_words(self):
         self.assertEqual("one hundred and twenty seven", three_digits_to_words([1, 2, 7]))
