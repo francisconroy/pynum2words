@@ -21,6 +21,7 @@ def three_digits_to_words(three_digit_list, language="EN"):
 def two_digits_to_words(two_digit_list, language="EN"):
     """
 
+    :param language:
     :param two_digit_list:
     :return:
     """
